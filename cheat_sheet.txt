@@ -1,0 +1,11 @@
+install mingw32
+install cmake 
+
+project(ME_333_HW_1)
+
+cmake -G "MinGW Makefiles" -S . -B build
+mingw32-make -C build 
+.\build\my_program.exe
+
+all run in 6DOF
+also make a build folder

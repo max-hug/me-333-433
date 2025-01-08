@@ -1,0 +1,72 @@
+ME 333 HW 1
+Max Hughes
+
+1. Code output: "Hello World". See HelloWorld.c for code.
+
+2. A pointer variable is a variable that holds a memory address (hexidecimal value) rather than a value is meant to be used by itself. This address can then be followed and used as another variable using the dereference (*) operator. A non pointer variable is meant to be used without dereferencing, and therefore can be one of many data types (int, char, etc.)
+
+3. Code needs to be converted into something understandable by a computer (machine code) from the coding language at some point to be used. Compiled languages are turned in to machine code all at once, before running, using a compiler (a machine code file that can be executed is outputed by the compiler). An interpreter converts code as it is being run, line by line.
+
+4.
+    a. 0x1E --> Base 10: 030, Base 2: 00011110, msb: 0
+    b. 0x32 --> Base 10: 051, Base 2: 00110011, msb: 0
+    c. 0xFE --> Base 10: 254, Base 2: 11111110, msb: 1
+
+6. 16 bit address = 2^16 addresses --> 2^3 bits/address --> total bits = 2^16*2^3 = 2^19
+
+7. 
+    a. k -> 107
+    b. 5 -> 53
+    c. = -> 61
+    d. ? -> 63
+
+8. 
+    a. unsigned char -> 0-255
+    b. short -> -2^15 - 2^15-1
+    c. double -> -2^2048 - 2^2048
+
+10. Signed data types use an extra bit to indicate the sign of the number, and can therefore be positive or negative. Unsigned do not, and therefore cannot ne negative but can be larger for the same number of bits.
+
+11. 
+    a. chars require less memory and allow for faster computations, while ints allow for storage of higher values and increase the threshold for over/underflow.
+    b. floats require less memory and allow for fast computations, while doubles allow for finer precision and the storage of higher values
+    c. chars require less memory, have greater space efficency, faster computations, and precision, while floats allow for storage of higher values using a single variable.
+
+16. long long int (same number of bits)
+
+17. 
+    a. 
+        0xB0-0xB3: unknown
+        0xB4-0xB7: unknown
+        0xB8: unknown
+        0xB9: unknown
+    b. 
+        0xB0-0xB3: unknown
+        0xB4-0xB7: unknown
+        0xB8: 0xB0
+        0xB9: unknown
+    c. 
+        0xB0-0xB3: unknown
+        0xB4-0xB7: unknown
+        0xB8: 0xB0
+        0xB9: unknown
+    d. 
+        0xB0-0xB3: 0xAE, 0x00, 0x00, 0x00
+        0xB4-0xB7: unknown
+        0xB8: 0xB0
+        0xB9: unknown
+    e. 
+        0xB0-0xB3: 0xAE, 0x00, 0x00, 0x00
+        0xB4-0xB7: unknown
+        0xB8: 0xB0
+        0xB9: 0xB0
+    f. 
+        0xB0-0xB3: 0x12, 0x00, 0x00, 0x00
+        0xB4-0xB7: unknown
+        0xB8: 0xB0
+        0xB9: 0xB0
+    g. 
+        0xB0-0xB3: 0x12, 0x00, 0x00, 0x00
+        0xB4-0xB7: 0x12, 0x00, 0x00, 0x00
+        0xB8: 0xB0
+        0xB9: 0xB0
