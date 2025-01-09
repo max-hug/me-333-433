@@ -1,0 +1,58 @@
+ME 333 HW 2
+Max Hughes
+
+18.
+    1. preproccesor --> outputs (processed) .c code 
+    2. compile --> outputs assembly code
+    3. assemble --> outputs object code
+    4. linker --> outputs executable
+
+19. main returns a type int. The return value is used to indicate the success state of the program, with 0 indicating success and -1 indicating some type of error.
+
+21.
+    a. 140
+    b. 4
+    c. 24
+
+22.
+    a. 0
+    b. 0.667
+    c. 0.0
+    d. error
+    e. 3
+    f. error
+
+27.
+    1. Draw a calling diagram for the functions.
+    2. For each function, write test cases (represnative inputs + their expected outputs)
+    3. Use a debugger/print statements as needed to make these test cases work. Start with the lowest level functions (call the least other functions) and work up.
+    4. Once you have worked all the way up to the main function, the program should be working. Consult help from fresh eyes if not.
+
+28. See invest_modified.c
+
+
+30. 
+    a. 3
+    b. 4
+    c. 2
+    d. 6
+    e. error
+    f. unknown
+    g. 2
+
+31. 5. Moving term by term, we first have 3*(5>1). 5>1 is a logical expression which evaluates to true, or 1. Multiplying this by 3 results in 3. This is added to k=2, which both returns 2 and modified k, resulting in a total of 5. We then add the logical expression k == 6, which now evaluates to false, or 0, since k is 2.
+
+32.
+    a. 0xF2
+    b. 0x01
+    c. 0x0F
+    d. 0x0E
+    e. 0x01
+    f. 0x68
+    g. 0x00
+
+34. See ascii_generator.c
+
+35.
+
+

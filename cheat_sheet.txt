@@ -7,5 +7,5 @@ cmake -G "MinGW Makefiles" -S . -B build
 mingw32-make -C build 
 .\build\my_program.exe
 
-all run in 6DOF
+all run in hw folder
 also make a build folder
