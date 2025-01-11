@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/my_program.dir/bubble.c.obj"
-  "CMakeFiles/my_program.dir/bubble.c.obj.d"
+  "CMakeFiles/my_program.dir/ascii_generator.c.obj"
+  "CMakeFiles/my_program.dir/ascii_generator.c.obj.d"
   "libmy_program.dll.a"
   "my_program.exe"
   "my_program.exe.manifest"
