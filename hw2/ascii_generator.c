@@ -9,8 +9,9 @@ int main (void){
     printf("ABRIDGED ASCII TABLE\n\n");
     printf("Value | Representation\n");
 
+    // loop through char values
     for(unsigned char i = 33; i <= 127; i++){
-        printf("%5d | %5c\n", i, i);
+        printf("%5d | %5c\n", i, i); // print them
     }
     
 }

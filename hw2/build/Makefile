@@ -128,29 +128,29 @@ my_program/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/build
 .PHONY : my_program/fast
 
-ascii_generator.obj: ascii_generator.c.obj
-.PHONY : ascii_generator.obj
+bubble.obj: bubble.c.obj
+.PHONY : bubble.obj
 
 # target to build an object file
-ascii_generator.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/ascii_generator.c.obj
-.PHONY : ascii_generator.c.obj
+bubble.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.obj
+.PHONY : bubble.c.obj
 
-ascii_generator.i: ascii_generator.c.i
-.PHONY : ascii_generator.i
+bubble.i: bubble.c.i
+.PHONY : bubble.i
 
 # target to preprocess a source file
-ascii_generator.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/ascii_generator.c.i
-.PHONY : ascii_generator.c.i
+bubble.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.i
+.PHONY : bubble.c.i
 
-ascii_generator.s: ascii_generator.c.s
-.PHONY : ascii_generator.s
+bubble.s: bubble.c.s
+.PHONY : bubble.s
 
 # target to generate assembly for a file
-ascii_generator.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/ascii_generator.c.s
-.PHONY : ascii_generator.c.s
+bubble.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.s
+.PHONY : bubble.c.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... my_program
-	@echo ... ascii_generator.obj
-	@echo ... ascii_generator.i
-	@echo ... ascii_generator.s
+	@echo ... bubble.obj
+	@echo ... bubble.i
+	@echo ... bubble.s
 .PHONY : help
 
 
