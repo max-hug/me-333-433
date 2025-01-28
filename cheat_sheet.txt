@@ -1,11 +1,15 @@
 install mingw32
 install cmake 
 
-project(ME_333_HW_1)
-
 cmake -G "MinGW Makefiles" -S . -B build
 mingw32-make -C build 
 .\build\my_program.exe
 
 all run in hw folder
-also make a build folder
+
+list COM Ports:
+ Get-WmiObject Win32_SerialPort | Select-Object Name, DeviceID
+
+ XC32 Stuff:
+xc32-gcc -mprocessor=32MX795F512H -o simplePIC.elf "-Wl,--script=skeleton/NU32DIPbootloaded.ld" simplePIC.c
+xc32-bin2hex simplePIC.elf 

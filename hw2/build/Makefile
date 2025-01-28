@@ -128,29 +128,29 @@ my_program/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/build
 .PHONY : my_program/fast
 
-bubble.obj: bubble.c.obj
-.PHONY : bubble.obj
+test.obj: test.c.obj
+.PHONY : test.obj
 
 # target to build an object file
-bubble.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.obj
-.PHONY : bubble.c.obj
+test.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/test.c.obj
+.PHONY : test.c.obj
 
-bubble.i: bubble.c.i
-.PHONY : bubble.i
+test.i: test.c.i
+.PHONY : test.i
 
 # target to preprocess a source file
-bubble.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.i
-.PHONY : bubble.c.i
+test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/test.c.i
+.PHONY : test.c.i
 
-bubble.s: bubble.c.s
-.PHONY : bubble.s
+test.s: test.c.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-bubble.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/bubble.c.s
-.PHONY : bubble.c.s
+test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my_program.dir\build.make CMakeFiles/my_program.dir/test.c.s
+.PHONY : test.c.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... my_program
-	@echo ... bubble.obj
-	@echo ... bubble.i
-	@echo ... bubble.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 

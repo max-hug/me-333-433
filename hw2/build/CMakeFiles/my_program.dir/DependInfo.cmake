@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/maxhu/Documents/VS_Code/me_333/hw2/bubble.c" "CMakeFiles/my_program.dir/bubble.c.obj" "gcc" "CMakeFiles/my_program.dir/bubble.c.obj.d"
+  "C:/Users/maxhu/Documents/VS_Code/me_333/hw2/test.c" "CMakeFiles/my_program.dir/test.c.obj" "gcc" "CMakeFiles/my_program.dir/test.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

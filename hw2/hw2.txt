@@ -18,9 +18,9 @@ Max Hughes
     a. 0
     b. 0.667
     c. 0.0
-    d. error
+    d. 3
     e. 3
-    f. error
+    f. 3.0
 
 27.
     1. Draw a calling diagram for the functions.

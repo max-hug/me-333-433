@@ -1,0 +1,56 @@
+ME 333 HW 3
+Max Hughes
+
+3-16
+
+3. Pin 12 is not 5V tolerant 
+    SOSCO:32.768 kHz low-power oscillator crystal output
+    RPA4: Port A, Remappable IO pin
+    T1CK: Timer1 external clock input 
+    CTED9: CTMU external edge input 
+    PMA1: Parallel master port address bit 1 IO
+    RA4: Port A, IO port
+
+4. TRISC
+
+5. 0x00C3
+
+6. 
+    SYSCLK: CPU clock for command execution.
+    PBCLK: Perihperal bus clock for use by peripherals 
+    PORTA-PORTC: Bidirectional IO port. (A&B are Analog Input capable)
+    Timer1-5: Counts the number of pulses in an input signal
+    10-bit ADC: converts analog input to 0-1023 digital signal, mappable to many pins
+    PWM OC1-5: Output compare that can generate pulses of a specied duration/duty cycle
+    Data RAM: Random access memory, where voltaile data (like program variables) are stored
+    Program Flash Memory: memory that retains data when device is unpowered, used to store the program
+    Prefetch Catch Module: Stores anticipated CPU instructions 
+
+7. PORTx, USB, CANx, ETHERNET, DMAC, ICD, Interrupts [Remapabble pins]
+
+8. 3.3V / 1024 values = 3.2mV/value --> we couldn't detect a change of half of this, or 1.6mV.
+
+9. The PIC32Mx1xx family does not have a prefetch Module
+
+10. Since the flash memory is slow, lots of memory needs to be accessed in 1 clock cycle to keep the cache ahead of the CPU instruction execution.
+
+11. Using an open drain configuration on the pin --> wiring the pin to 4V via a input pullup resistor. 
+
+12. 
+    Flash: 0x1D000000-0x1F7FFFFF
+    RAM: 0x00000000-0x1CFFFFFF
+
+13. 
+    a. Word 1, bits 13-12, value: 01
+    b. Device Configuration Word 1, Enable -> set bit 23. Postscale select -> bits 20-16 10100
+    c. Device Configuration Word 1, bits 9-8 10 (HS mode) and bits 2-0 011 (HS+PLL) 
+
+14. [Using USB-serial converter instead of NU32 board] USB port draws a maximum of 500mA --> reserve 100mA for device operation --> 5V/400mA = ~15 ohms
+
+15. The MCP1702 voltage regulator has a voltage range of 2.7-13.2V. To create 3.3V, the chip needs a dropout of 1V, however, meaning a power range of 4.3V-13.2V can be used.
+
+16. 
+    Green LED: Pin 11, RB4
+    Yellow LED: Pin 14, RB5
+    User Button: Pin 12, RA4
+    Reset Button: Pin 1, MCLR

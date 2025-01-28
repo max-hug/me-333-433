@@ -6,5 +6,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Define the main program executable and specify source files
 add_executable(my_program
-    bubble.c
+    test.c
 )

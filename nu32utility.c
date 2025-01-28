@@ -163,12 +163,12 @@ bool hex_pa_in_boot_flash(uint32_t pa);
 #endif 
 
 // the version of the client
-#define MAJOR_VERSION 5
-#define MINOR_VERSION 2
+#define MAJOR_VERSION 6
+#define MINOR_VERSION 1
 
 
 #define VERSION_WAIT 1      // time to wait for bootloader version in seconds
-#define ERASE_WAIT 5        // time to wait for a flash erase, in seconds
+#define ERASE_WAIT 10        // time to wait for a flash erase, in seconds
                             // could be shorter for 5.2, but must be this long for 5.0
 #define PROGRAM_WAIT 2      // time to write a hex line, in seconds
 #define CHECK_WAIT 2        // time to wait for a crc check on the pic32, in seconds
@@ -821,8 +821,8 @@ void uart_open(const char port_name[])  // open a serial port (using the windows
   dcbSerialParams.ByteSize = 8;           // 8 bits in a byte
   dcbSerialParams.StopBits = ONESTOPBIT;  // one stop bit
   dcbSerialParams.Parity = NOPARITY;      // no parity
-  dcbSerialParams.fRtsControl = RTS_CONTROL_HANDSHAKE; // use RTS flow control
-  dcbSerialParams.fOutxCtsFlow = TRUE;                 // use CTS flow control
+  dcbSerialParams.fRtsControl = RTS_CONTROL_DISABLE; // use RTS flow control
+  dcbSerialParams.fOutxCtsFlow = FALSE;                 // use CTS flow control
   if(!SetCommState(port, &dcbSerialParams)){
     printf("Error configuring serial port.\n");
     exit(EXIT_FAILURE);
@@ -954,7 +954,7 @@ void uart_open(const char port_name[])  // open a serial port (using POSIX calls
   struct termios tio;
   memcpy(&tio, &old_tio, sizeof(tio)); // start from the original settings
 
-  tio.c_cflag |= CS8 | CREAD | CLOCAL | CRTSCTS; // 8n1, see termios.h 
+  tio.c_cflag |= CS8 | CREAD | CLOCAL; // 8n1, see termios.h 
 
   // set raw input mode
   tio.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG);

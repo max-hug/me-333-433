@@ -71,28 +71,28 @@ include CMakeFiles/my_program.dir/flags.make
 CMakeFiles/my_program.dir/codegen:
 .PHONY : CMakeFiles/my_program.dir/codegen
 
-CMakeFiles/my_program.dir/bubble.c.obj: CMakeFiles/my_program.dir/flags.make
-CMakeFiles/my_program.dir/bubble.c.obj: C:/Users/maxhu/Documents/VS_Code/me_333/hw2/bubble.c
-CMakeFiles/my_program.dir/bubble.c.obj: CMakeFiles/my_program.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\maxhu\Documents\VS_Code\me_333\hw2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_program.dir/bubble.c.obj"
-	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/bubble.c.obj -MF CMakeFiles\my_program.dir\bubble.c.obj.d -o CMakeFiles\my_program.dir\bubble.c.obj -c C:\Users\maxhu\Documents\VS_Code\me_333\hw2\bubble.c
+CMakeFiles/my_program.dir/test.c.obj: CMakeFiles/my_program.dir/flags.make
+CMakeFiles/my_program.dir/test.c.obj: C:/Users/maxhu/Documents/VS_Code/me_333/hw2/test.c
+CMakeFiles/my_program.dir/test.c.obj: CMakeFiles/my_program.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\maxhu\Documents\VS_Code\me_333\hw2\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/my_program.dir/test.c.obj"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_program.dir/test.c.obj -MF CMakeFiles\my_program.dir\test.c.obj.d -o CMakeFiles\my_program.dir\test.c.obj -c C:\Users\maxhu\Documents\VS_Code\me_333\hw2\test.c
 
-CMakeFiles/my_program.dir/bubble.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_program.dir/bubble.c.i"
-	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\maxhu\Documents\VS_Code\me_333\hw2\bubble.c > CMakeFiles\my_program.dir\bubble.c.i
+CMakeFiles/my_program.dir/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/my_program.dir/test.c.i"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\maxhu\Documents\VS_Code\me_333\hw2\test.c > CMakeFiles\my_program.dir\test.c.i
 
-CMakeFiles/my_program.dir/bubble.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_program.dir/bubble.c.s"
-	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\maxhu\Documents\VS_Code\me_333\hw2\bubble.c -o CMakeFiles\my_program.dir\bubble.c.s
+CMakeFiles/my_program.dir/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/my_program.dir/test.c.s"
+	C:\msys64\ucrt64\bin\cc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\maxhu\Documents\VS_Code\me_333\hw2\test.c -o CMakeFiles\my_program.dir\test.c.s
 
 # Object files for target my_program
 my_program_OBJECTS = \
-"CMakeFiles/my_program.dir/bubble.c.obj"
+"CMakeFiles/my_program.dir/test.c.obj"
 
 # External object files for target my_program
 my_program_EXTERNAL_OBJECTS =
 
-my_program.exe: CMakeFiles/my_program.dir/bubble.c.obj
+my_program.exe: CMakeFiles/my_program.dir/test.c.obj
 my_program.exe: CMakeFiles/my_program.dir/build.make
 my_program.exe: CMakeFiles/my_program.dir/linkLibs.rsp
 my_program.exe: CMakeFiles/my_program.dir/objects1.rsp
