@@ -1,0 +1,81 @@
+ME 333 HW 6
+Max Hughes
+
+Ch 5 ---
+
+3. a. All operations with float and long double, and division with long long. Ex: 
+
+            d3 = d1+d2;
+        9d007cec:	8fc60040 	lw	a2,64(s8)
+        9d007cf0:	8fc70044 	lw	a3,68(s8)
+        9d007cf4:	8fc40038 	lw	a0,56(s8)
+        9d007cf8:	8fc5003c 	lw	a1,60(s8)
+        9d007cfc:	0f401d26 	jal	9d007498 <__adddf3>
+        9d007d00:	00000000 	nop
+        9d007d04:	afc20048 	sw	v0,72(s8)
+        9d007d08:	afc3004c 	sw	v1,76(s8)
+
+    b. Smallest is int addition, subtraction, and multiplication. It is less than the char commands since the char need an extra line to cast back to an char from the integer math under the hood. Ex: 
+
+            i3 = i1-i2;
+        9d007d0c:	8fc30014 	lw	v1,20(s8)
+        9d007d10:	8fc20018 	lw	v0,24(s8)
+        9d007d14:	00621023 	subu	v0,v1,v0
+        9d007d18:	afc20050 	sw	v0,80(s8)
+    
+    c. 
+
+        char   int   long long   float  long double
+
++      1.25(5) 1(4)  2.75(11)      J         J
+-      1.25(5) 1(4)  2.75(11)      J         J
+*      1.25(5) 1(4)  4.5(18)       J         J
+/      1.25(5) 1(4)     J          J         J 
+
+    d. Subroutine: <__adddf3> At address 0x000000009d007498 [Program Flash, Cacheable], uses about 65 bytes
+
+4. bitwise AND --> 4, bitwise OR --> 4, left shift --> 3, right shift --> 3
+
+Ch 6 ---
+
+1. 
+    Interrupts:
+        +: Fast to execute, able to set priority, allow for processing of other code between interrupt events
+        -: Only available on certain pins, requires using volatile variables, restrictions on function useage (e.g. void only)
+    Polling:
+        +: Easy to implement, expandable
+        -: requires delays between polling, not stackable for multiple uses
+
+4. 
+    a. The ISR will be executed.
+    b. The new ISR will be executed. Then the orgininal ISR will be completed.
+    c. The current ISR will be completed, then the new ISR will be executed.
+    d. The current ISR will be completed, then the new ISR will be executed.
+
+5. 
+    a. the CPU must save the contents of its registers to the RAM. Upon completion, the contents of this RAM must be copied back to the registers.
+    b. if a SRS is used, it will be used by the ISR instead of the regular registers, so no restoring needs to be done. It already begins up to date since it is updated in parallel with the regular registers.
+
+8. 
+    a. IECOSET = 0x0000100, IFSOCLR = 0x0000100, IPC2SET = 0x00000016
+        Enable timer 2 --> bit 9 of IECO
+        Clear flag to 0 --> bit 9 of IFS0
+        Priority to 5 -->  101 in bits 4-2 of IPC2
+        Subpriority to 2 --> 10 in bits 1-0 of IPC2
+    b. IEC1SET = 0x40000000, IFSCLR = 0x40000000, IPC6SET = 0x00001900
+        Enable --> bit 30 of IEC0
+        Flag --> bit 30 of IFS0
+        Priority 6 --> 110 in bits 12-10 of IPC6
+        Subpriority 1 --> 01 in bits 9-8 of IPC8
+    c. IEC1SET= 0x0000080, IFSOCLR = 0x0000080, IPC8SET = 0x0000001B
+        Enable --> bit 8 of IEC1 
+        Flag --> bit 8 of IFS1
+        Priority 7 --> 110 in bits 4-2 of IPC8
+        Subpriority 3 --> 11 in bits 1-0 of IPC8
+    d. IEC1SET= 0x0002000, IFSOCLR = 0x0002000, IPC8SET = 0x0E000000
+        Enable --> bit 13 of IEC0 
+        Flag --> bit 13 of IFS0
+        Priority 3 --> 011 in bits 28-26 of IPC2
+        Subpriority 2 --> 10 in bits 25-24 of IPC2
+
+9. See sample_modified.C

@@ -1,7 +1,7 @@
 XC32PATH=C:\Program Files\Microchip\xc32\v4.45\bin
 HARMONYPATH=
 NU32PATH=C:\Users\maxhu\Documents\VS_Code\me_333\nu32
-PORT=\\.\COM10
+PORT=COM10
 TERMEMU=C:\Program Files\PuTTY\putty.exe
 
 #This file is used to:
@@ -61,10 +61,10 @@ OBJDMP="$(XC32PATH)/xc32-objdump"
 WRITE="$(NU32PATH)/nu32utility"
 
 #the output target $(TARGET).hex
-TARGET=out
+TARGET=build/out
 
 #the linker script
-LINKSCRIPT=NU32DIPbootloaded.ld
+LINKSCRIPT=build/NU32DIPbootloaded.ld
 
 #additional linker flags
 LINKFLAGS=-Map=$(TARGET).map
@@ -113,8 +113,10 @@ clean :
 
 .PHONY: write
 # After making, call the NU32utility to program via bootloader.
-write : $(TARGET).hex $(TARGET).dis
-	$(WRITE) "$(PORT)" $(TARGET).hex 
+#write : $(TARGET).hex $(TARGET).dis
+#	$(WRITE) '$(PORT)' $(TARGET).hex 
+write:
+	C:\Users\maxhu\Documents\VS_Code\me_333\nu32\nu32utility '\\.\COM10' .\build\out.hex
 
 .PHONY: putty
 putty :

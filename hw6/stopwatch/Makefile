@@ -1,7 +1,7 @@
 XC32PATH=C:\Program Files\Microchip\xc32\v4.45\bin
 HARMONYPATH=
 NU32PATH=C:\Users\maxhu\Documents\VS_Code\me_333\nu32
-PORT=\\.\COM10
+PORT=COM10
 TERMEMU=C:\Program Files\PuTTY\putty.exe
 
 #This file is used to:
@@ -77,7 +77,7 @@ endif
 OBJS := $(patsubst %.c, %.o,$(wildcard *.c))
 HDRS := $(wildcard *.h)
 PROC = 32MX170F256B
-CFLAGS=-g -O1 -x c
+CFLAGS=-g -O0 -x c
 
 #if on windows use a different RM
 ifdef ComSpec
@@ -109,12 +109,14 @@ $(TARGET).elf : $(OBJS)
 .PHONY: clean
 # Erase all hex, map, object, and elf files.
 clean :
-	$(RM) *.hex *.map *.o *.elf *.dep *.dis       
+	rm -f *.hex *.map *.o *.elf *.dep *.dis       
 
 .PHONY: write
 # After making, call the NU32utility to program via bootloader.
-write : $(TARGET).hex $(TARGET).dis
-	$(WRITE) "$(PORT)" $(TARGET).hex 
+#write : $(TARGET).hex $(TARGET).dis
+#	$(WRITE) '$(PORT)' $(TARGET).hex 
+write:
+	C:\Users\maxhu\Documents\VS_Code\me_333\nu32\nu32utility '\\.\COM10' .\out.hex
 
 .PHONY: putty
 putty :
@@ -123,3 +125,7 @@ putty :
 .PHONY: screen
 screen :
 	"$(TERMEMU)" "$(PORT)" 230400
+
+.PHONY: list
+list :
+	powershell -Command "Get-WmiObject Win32_SerialPort | Select-Object Name, DeviceID"

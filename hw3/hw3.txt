@@ -1,7 +1,5 @@
 ME 333 HW 3
-Max Hughes
-
-3-16
+Max Hughess
 
 3. Pin 12 is not 5V tolerant 
     SOSCO:32.768 kHz low-power oscillator crystal output
@@ -26,7 +24,7 @@ Max Hughes
     Program Flash Memory: memory that retains data when device is unpowered, used to store the program
     Prefetch Catch Module: Stores anticipated CPU instructions 
 
-7. PORTx, USB, CANx, ETHERNET, DMAC, ICD, Interrupts [Remapabble pins]
+7. PORTx, USB, DMAC, ICD, Interrupts [Remapabble pins]
 
 8. 3.3V / 1024 values = 3.2mV/value --> we couldn't detect a change of half of this, or 1.6mV.
 

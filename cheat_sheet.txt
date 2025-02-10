@@ -8,8 +8,17 @@ mingw32-make -C build
 all run in hw folder
 
 list COM Ports:
- Get-WmiObject Win32_SerialPort | Select-Object Name, DeviceID
+Get-WmiObject Win32_SerialPort | Select-Object Name, DeviceID
 
- XC32 Stuff:
-xc32-gcc -mprocessor=32MX795F512H -o simplePIC.elf "-Wl,--script=skeleton/NU32DIPbootloaded.ld" simplePIC.c
-xc32-bin2hex simplePIC.elf 
+XC32 Stuff (run in me_333):
+xc32-gcc -mprocessor=32MX170F256B -o .\hw4\simplePIC.elf "-Wl,--script=skeleton/NU32DIPbootloaded.ld" .\hw4\simplePIC.c
+xc32-bin2hex .\hw4\simplePIC.elf 
+
+Make:
+make
+C:\Users\maxhu\Documents\VS_Code\me_333\nu32\nu32utility \\.\COM10 .\out.hex
+make putty
+
+Cmake:
+cmake -G "MinGW Makefiles" -S . -B build
+mingw32-make -C build 

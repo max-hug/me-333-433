@@ -77,7 +77,7 @@ endif
 OBJS := $(patsubst %.c, %.o,$(wildcard *.c))
 HDRS := $(wildcard *.h)
 PROC = 32MX170F256B
-CFLAGS=-g -O1 -x c
+CFLAGS=-g -O0 -x c
 
 #if on windows use a different RM
 ifdef ComSpec
@@ -109,7 +109,7 @@ $(TARGET).elf : $(OBJS)
 .PHONY: clean
 # Erase all hex, map, object, and elf files.
 clean :
-	$(RM) *.hex *.map *.o *.elf *.dep *.dis       
+	rm -f *.hex *.map *.o *.elf *.dep *.dis       
 
 .PHONY: write
 # After making, call the NU32utility to program via bootloader.
@@ -123,3 +123,7 @@ putty :
 .PHONY: screen
 screen :
 	"$(TERMEMU)" "$(PORT)" 230400
+
+.PHONY: list
+list :
+	Get-WmiObject Win32_SerialPort | Select-Object Name, DeviceID

@@ -1,0 +1,23 @@
+ME 333 HW 5
+Max Hughes
+
+Ch 3 ---
+
+3. Bits Port A: 4-0, Port B: 15-0, RB0 = Pin 4
+
+4. LATBbits.LATB4 = 0; --> LATBbits.LATB4 = 1; in line 7
+
+5. see simplePICModified.c
+
+7. The linked executable files contain lots of extra debugging information (notably for dissasembling) not included in the final .hex file.
+
+9. TRISBSET = 0b1100, TRISBCLR = 0b100010, TRISBINV = 0b10001
+
+Ch 4 --
+
+1. All functions/constants/global variables are public in nu32dip.c
+
+2.
+    a. see invest_modified
+    b. see attached files. The only code in main.c is the actual main function and the includes, per the assigment. All function prototypes go inside helper.h so it serves ther purpose of a header file (allowing proper definitions before calling functions) along with the constant defines, since these are internal to the helper. The struct is also delclared here, since it is a variable and variables are typically declared in the .h file. This leaves only the function implementation in helper.c.
+    c. see attached files. main.c remains the same as previously. the calculate files only contain the single calculate function, with no other variables or constants. The io files contain the remainder of the functions and all of the variables / constants. This was done because all of the variables/constants relate to storing or constraining the input and output.
