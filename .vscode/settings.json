@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "nu32dip.h": "c"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/maxhu/Documents/VS_Code/me_333/hw1"
 }
