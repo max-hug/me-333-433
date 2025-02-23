@@ -14,6 +14,7 @@ void NU32DIP_WriteUART1(const char * string);
 // Custom Functions
 void NU32DIP_Delay(int ms);
 void NU32DIP_DelayMicroseconds(int us);
+unsigned int NU32DIP_adc_sample_convert(int pin);
 
 #define NU32DIP_DESIRED_BAUD 230400    // Baudrate for RS232
 #define NU32DIP_GREEN LATBbits.LATB4
