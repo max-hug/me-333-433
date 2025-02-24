@@ -12,7 +12,7 @@ ser = serial.Serial('COM10',230400)
 print('Opening port: ')
 print(ser.name)
 
-ser.write(b'-.2 -.01 1000\n') # Kp Ki eintmax
+ser.write(b'-.13 -.1 1000\n') # Kp Ki eintmax
 
 sampnum = 0
 read_samples = 10

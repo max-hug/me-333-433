@@ -12,6 +12,7 @@ static volatile int REFarray[PLOTPTS]; // reference values to plot
 static volatile int StoringData = 0; // if this flag = 1, currently storing plot data
 static volatile float Kp = 0, Ki = 0; // control gains
 static volatile int Eint = 0;
+static volatile int Emax = 0;
 
 void makeWaveform() {
   int i = 0, center = 500, A = 200; // square wave, fill in center value and amplitude
@@ -32,7 +33,12 @@ void __ISR(_TIMER_2_VECTOR, IPL5SOFT) Controller(void) {
 
   int adcval = NU32DIP_adc_sample_convert(0);
   int E = adcval - Waveform[counter];
+
   Eint += E;
+  if(Eint > Emax){
+    Eint = Emax;
+  }
+
   float u = Kp*E + Ki*Eint + 50.0;
   if (u > 100.0){u = 100.0;}
   else if (u < 0.0){u = 0.0;}
@@ -108,16 +114,18 @@ int main(void) {
 
   char message[100]; // message to and from MATLAB
   float kptemp = 0, kitemp = 0; // temporary local gains
+  int Emaxtemp = 0; // temp max
   int i = 0; // plot data loop counter
 
   while (1) {
     NU32DIP_ReadUART1(message, sizeof(message)); // wait for a message from MATLAB
-    sscanf(message, "%f %f" , &kptemp, &kitemp);
+    sscanf(message, "%f %f %d" , &kptemp, &kitemp, &Emaxtemp);
 
     __builtin_disable_interrupts(); // keep ISR disabled as briefly as possible
     Kp = kptemp; // copy local variables to globals used by ISR
     Ki = kitemp;
     Eint = 0;
+    Emax = Emaxtemp;
     __builtin_enable_interrupts(); // only 2 simple C commands while ISRs disabled
 
     StoringData = 1; // message to ISR to start storing data
