@@ -1,3 +1,7 @@
+// basic code to handle printing to usb and GPIO through interrupts
+// Max H
+// April 2025
+
 
 #include <stdio.h>
 #include "pico/stdlib.h"
