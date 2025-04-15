@@ -4,7 +4,7 @@
 #include "hardware/spi.h"
 #include <math.h>
 
-#define CS_PIN 17
+#define CS_PIN 14
 #define SINE_FREQ 2
 #define TRIGANGLE_FREQ 1
 
