@@ -68,6 +68,7 @@ int main()
     
 
     while (true) {
+        printf("test\n");
         char output_str[200];
         char freq_str[20];
         uint64_t time_elapsed_us, last_time;
@@ -84,10 +85,8 @@ int main()
         draw_str(0, 0, output_str);
 
         sprintf(freq_str, "%.1fHz", 1000000.0/time_elapsed_us);
+        printf("%.1fHz", 1000000.0/time_elapsed_us);
         draw_str(90, 24, freq_str);
-
-
-
 
         ssd1306_update();
     }
