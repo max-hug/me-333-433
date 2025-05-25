@@ -42,8 +42,7 @@ int main()
 
     motor_setup(ENA, PHA, ENB, PHB);
 
-    gpio_put(PHA, 0);
-    gpio_put(PHB, 1);
+
 
     int duty_cycle = 75;
     char input[10];
@@ -52,9 +51,20 @@ int main()
         printf("\nCurrent Duty Cycle: %d%%. Input + or - to change: ", duty_cycle);
         scanf("%s", input);
         if(input[0] == '+' && duty_cycle < 100){ duty_cycle++;}
-        else if(input[0] == '-' && duty_cycle > 0){ duty_cycle--;}
+        else if(input[0] == '-' && duty_cycle > -100){ duty_cycle--;}
 
+        if(duty_cycle > 0){
         pwm_set_gpio_level(ENA, (int)(WRAP*duty_cycle/100.0)); 
         pwm_set_gpio_level(ENB, (int)(WRAP*duty_cycle/100.0)); 
+        gpio_put(PHA, 0);
+        gpio_put(PHB, 1);
+        }
+        else{
+        pwm_set_gpio_level(ENA, (int)(-WRAP*duty_cycle/100.0)); 
+        pwm_set_gpio_level(ENB, (int)(-WRAP*duty_cycle/100.0)); 
+        gpio_put(PHA, 1);
+        gpio_put(PHB, 0);
+        }
+
     }
 }
